@@ -6,12 +6,7 @@
 conda create -n lm_eval python=3.10
 conda activate lm_eval
 
-pip install crfm_helm==0.2.3
-pip install lm_eval==0.3.0
-pip install requests
-pip install accelerate
-pip install torch==1.12.0+cu116 torchvision==0.13.0+cu116 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu116
-pip install transformers==4.28.1
+pip install -r requirements.txt
 ```
 
 ## Running on QA tasks
@@ -46,5 +41,6 @@ python -u evaluate_task_result.py \
   --task-name ${task} \
   --num-fewshot ${shots} \
   --model-type ${model_arch} \
-  --ret-path ${task}-${shots}-${model_arch}.txt
+  --ret-path ${task}-${shots}-${model_arch}.txt \
+  --output-path ${task}-${shots}-${model_arch}.jsonl \
 ```

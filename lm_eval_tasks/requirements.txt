@@ -1,0 +1,7 @@
+numpy
+torch
+transformers
+lm-eval
+ftfy
+sentencepiece
+protobuf
