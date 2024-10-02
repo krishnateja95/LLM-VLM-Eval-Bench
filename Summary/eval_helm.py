@@ -4,19 +4,26 @@ import argparse
 
 
 def test():
+    
     parser = argparse.ArgumentParser()
     parser.add_argument("--task", type=str, default="")
     parser.add_argument("--method", type=str, default="")
     parser.add_argument("--model_name", type=str, default="")
     parser.add_argument("--input_path", type=str, default="")
     parser.add_argument("--output_path", type=str, default="")
+    parser.add_argument("--dataset", type=str, default="cnn_dailymail")
+    parser.add_argument("--dataset-dir", type=str, default="cnn_dailymail")
     args = parser.parse_args()
+    
     rouge = Rouge()
     rouge1_score_list = []
     rouge2_score_list = []
     rougel_score_list = []
     cover_list=[]
+    
     input_path=args.input_path
+
+
     prompt_list=[]
     labels=[]
     with open(input_path, 'r') as f:

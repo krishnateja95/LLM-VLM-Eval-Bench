@@ -1,0 +1,8 @@
+the task is :cnndm
+the method is :
+the model is :llama
+the rouge1 is :0.3101521114124062
+the rouge2 is :0.1469067313340661
+the rougel is :0.28931877807907286
+the coverage is :0.8299599409656335
+****************************************************
