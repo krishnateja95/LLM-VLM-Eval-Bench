@@ -8,7 +8,7 @@ export HF_HOME='/lus/grand/projects/datascience/krishnat/model_weights/LLaMA/lla
 
 Dataset_dir="./Summary_dir/"
 dataset="cnn_dailymail"
-task=cnndm #{xsum,multi_news,cnndm}
+task=xsum #{xsum,multi_news,cnndm}
 shots=0
 model=huggyllama/llama-7b
 model_arch=llama

@@ -90,7 +90,7 @@ def main():
     parser.add_argument("--recent_ratio", type=float, default=0.1)
     parser.add_argument('--enable_small_cache', action='store_true')
 
-    parser.add_argument("--sample_num", type=int, default=3)
+    parser.add_argument("--sample_num", type=int, default=1000)
     parser.add_argument("--method", type=str, default=None)
     
     parser.add_argument("--k", type=int, default=0)
