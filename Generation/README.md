@@ -2,18 +2,14 @@
 
 ## Setup
 ```bash
-conda create -n summary_tasks python=3.10
-conda activate summary_tasks
+conda create -n txt_gen python=3.11 -y
+conda activate txt_gen
 
-pip install crfm_helm==0.2.3
-pip install lm_eval==0.3.0
-pip install requests
-pip install accelerate
-pip install torch==1.12.0+cu116 torchvision==0.13.0+cu116 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu116
-pip install transformers==4.28.1
+pip install -r requirements.txt
 ```
 
 Evaluate LLM on wikitext dataset
+
 ```bash
 model_name=huggyllama/llama-7b
 task=wikitext # {wikitext, pg19}
