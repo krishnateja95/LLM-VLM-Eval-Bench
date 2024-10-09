@@ -7,7 +7,6 @@ from tqdm import tqdm
 import numpy as np
 import random
 import argparse
-# from llama_flash_attn_monkey_patch import replace_llama_attn_with_flash_attn
 import torch.distributed as dist
 import torch.multiprocessing as mp
 

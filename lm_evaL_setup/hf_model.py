@@ -10,7 +10,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 def run_evaluation():
     
     cache_dir = "/lus/grand/projects/datascience/krishnat/model_weights/LLaMA/llama_cache/"
-    model_name = "meta-llama/Llama-3.1-8B" 
+    model_name = "huggyllama/llama-7b" 
     
     tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True, cache_dir = cache_dir)
     model = AutoModelForCausalLM.from_pretrained(model_name, cache_dir= cache_dir, torch_dtype = torch.float16, device_map = "auto")
