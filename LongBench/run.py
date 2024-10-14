@@ -11,7 +11,6 @@ import os
 import json
 
 from huggingface_hub import login
-login("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")
 
 cache_dir = '/lus/grand/projects/datascience/krishnat/model_weights/LLaMA/llama_cache/'
 
