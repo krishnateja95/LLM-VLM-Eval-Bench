@@ -8,11 +8,17 @@ from loguru import logger as eval_logger
 from sqlitedict import SqliteDict
 from tqdm import tqdm
 
-from lmms_eval import utils
-from lmms_eval.api.instance import Instance
+# import ..utils
+
+from .. import utils
+
+# from lm_eval_setup import utils
+
+from instance import Instance
+
+# from lmms_eval import utils
 
 T = TypeVar("T", bound="lmms")
-
 
 class lmms(abc.ABC):
     def __init__(self) -> None:

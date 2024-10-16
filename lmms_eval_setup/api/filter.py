@@ -3,7 +3,7 @@ from typing import List
 
 from datasets import Dataset
 
-from lmms_eval.api.instance import Instance
+from instance import Instance
 
 
 class Filter:
