@@ -2,8 +2,11 @@ import json
 import os
 
 from tqdm import tqdm
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.tasks.hallusion_bench.utils import (
+from tasks.hallusion_bench.utils import (
     assign_correctness,
     check_same_by_chatgpt,
     evaluate_by_chatgpt,

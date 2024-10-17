@@ -40,8 +40,6 @@ from tqdm import tqdm
 import sys
 sys.path.append("..")
 
-
-
 from api import samplers
 from api.instance import Instance
 from api.registry import (
@@ -57,7 +55,6 @@ from api.registry import (
 
 from caching.cache import load_from_cache, save_to_cache
 from filters import build_filter_ensemble
-
 import utils
 
 # HuggingfaceM4/NoCaps contains truncated image in test split

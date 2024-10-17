@@ -6,8 +6,12 @@ import pandas as pd
 import yaml
 from loguru import logger as eval_logger
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
-from lmms_eval.tasks.mathverse.mathverse_evals import MathVerseEvaluator
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from tasks._task_utils.file_utils import generate_submission_file
+from tasks.mathverse.mathverse_evals import MathVerseEvaluator
 
 with open(Path(__file__).parent / "mathverse.yaml", "r") as f:
     raw_data = f.readlines()

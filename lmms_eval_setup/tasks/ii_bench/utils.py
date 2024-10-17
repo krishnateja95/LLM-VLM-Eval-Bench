@@ -3,8 +3,11 @@ import re
 from collections import Counter
 
 from loguru import logger
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
+from tasks._task_utils.file_utils import generate_submission_file
 
 PROMPT = """Question: {}
 (A) {}

@@ -23,8 +23,11 @@ import string
 from typing import Dict, Optional, Sequence, Union
 
 import langdetect
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.tasks.ifeval import instructions_util
+from tasks.ifeval import instructions_util
 
 logger = logging.getLogger(__name__)
 

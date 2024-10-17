@@ -73,13 +73,12 @@ class LlamaVision(lmms):
 
         self.max_frames_num = max_frames_num
         
-        print("pretrained, self.device_map, attn_implementation", pretrained, self.device_map, attn_implementation)
-        exit()
+        cache_dir = '/lus/grand/projects/datascience/krishnat/model_weights/LLaMA/llama_cache/'
 
-        self._model = MllamaForConditionalGeneration.from_pretrained(pretrained, revision=revision, torch_dtype=dtype, device_map=self.device_map, trust_remote_code=trust_remote_code, attn_implementation=attn_implementation)
+        self._model = MllamaForConditionalGeneration.from_pretrained(pretrained, cache_dir=cache_dir, revision=revision, torch_dtype=dtype, device_map="auto", trust_remote_code=trust_remote_code, attn_implementation=attn_implementation)
         
         self.model.eval()
-        self.processor = AutoProcessor.from_pretrained(pretrained)
+        self.processor = AutoProcessor.from_pretrained(pretrained, cache_dir=cache_dir)
         if accelerator.num_processes > 1 and device_map == "":
             assert accelerator.distributed_type in [DistributedType.FSDP, DistributedType.MULTI_GPU, DistributedType.DEEPSPEED], "Unsupported distributed type provided. Only DDP and FSDP are supported."
             # If you want to use DistributedType.DEEPSPEED, you have to run accelerate config before using the model

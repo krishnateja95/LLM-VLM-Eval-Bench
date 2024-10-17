@@ -9,7 +9,11 @@ from pathlib import Path
 import requests
 import yaml
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from tasks._task_utils.file_utils import generate_submission_file
 
 
 def doc_to_visual(doc):

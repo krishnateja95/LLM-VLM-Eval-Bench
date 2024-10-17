@@ -9,7 +9,11 @@ import matplotlib.font_manager as fm
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from tasks._task_utils.file_utils import generate_submission_file
 
 
 def add_order_label(image, label, font_size=40):

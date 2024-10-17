@@ -8,7 +8,11 @@ import requests
 import yaml
 from loguru import logger as eval_logger
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from tasks._task_utils.file_utils import generate_submission_file
 
 with open(Path(__file__).parent / "d170_en.yaml", "r") as f:
     raw_data = f.readlines()

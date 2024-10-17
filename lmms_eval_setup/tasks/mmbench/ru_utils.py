@@ -6,8 +6,12 @@ import pandas as pd
 import yaml
 from loguru import logger as eval_logger
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
-from lmms_eval.tasks.mmbench.mmbench_evals import MMBench_Evaluator
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from tasks._task_utils.file_utils import generate_submission_file
+from tasks.mmbench.mmbench_evals import MMBench_Evaluator
 
 with open(Path(__file__).parent / "mmbench.yaml", "r") as f:
     raw_data = f.readlines()

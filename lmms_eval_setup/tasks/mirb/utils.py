@@ -3,8 +3,8 @@ import re
 
 import numpy as np
 
-from lmms_eval.filters.extraction import ExtendedRegexFilter
-from lmms_eval.filters.transformation import MapFilter
+from filters.extraction import ExtendedRegexFilter
+from filters.transformation import MapFilter
 
 eval_logger = logging.getLogger("lmms-eval")
 

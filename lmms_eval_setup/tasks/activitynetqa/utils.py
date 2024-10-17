@@ -14,7 +14,11 @@ from decord import VideoReader, cpu
 from loguru import logger as eval_logger
 from openai import OpenAI
 
-import lmms_eval.tasks._task_utils.file_utils as file_utils
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+import tasks._task_utils.file_utils as file_utils
 
 with open(Path(__file__).parent / "_default_template_yaml", "r") as f:
     raw_data = f.readlines()

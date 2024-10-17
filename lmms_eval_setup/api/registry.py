@@ -3,7 +3,10 @@ from typing import Callable, Dict
 import evaluate as hf_evaluate
 from loguru import logger as eval_logger
 
-from .model import lmms
+import sys
+sys.path.append("..")
+
+from api.model import lmms
 
 MODEL_REGISTRY = {}
 

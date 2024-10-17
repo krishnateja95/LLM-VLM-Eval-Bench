@@ -1,7 +1,11 @@
 import re
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.filters.extraction import ExtendedRegexFilter
-from lmms_eval.filters.transformation import MapFilter
+
+from filters.extraction import ExtendedRegexFilter
+from filters.transformation import MapFilter
 
 
 def ai2d_doc_to_text(doc, lmms_eval_specific_kwargs=None):

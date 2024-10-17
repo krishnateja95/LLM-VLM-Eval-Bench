@@ -14,7 +14,11 @@
 
 """Registry of all instructions."""
 
-from lmms_eval.tasks.ifeval import instructions
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from tasks.ifeval import instructions
 
 _KEYWORD = "keywords:"
 

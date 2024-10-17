@@ -1,8 +1,11 @@
 import dataclasses
 from typing import Dict, Optional, Union
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.tasks.ifeval import instructions_registry
-from lmms_eval.utils import eval_logger
+from tasks.ifeval import instructions_registry
+from utils import eval_logger
 
 
 @dataclasses.dataclass

@@ -9,9 +9,12 @@ from pathlib import Path
 import requests
 import yaml
 from loguru import logger as eval_logger
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-import lmms_eval.tasks._task_utils.file_utils as file_utils
-from lmms_eval.filters.extraction import ExtendedRegexFilter
+import tasks._task_utils.file_utils as file_utils
+from filters.extraction import ExtendedRegexFilter
 
 with open(Path(__file__).parent / "_default_template_yaml", "r") as f:
     raw_data = f.readlines()
