@@ -13,7 +13,11 @@ from datasets.utils.metadata import MetadataConfigs
 from huggingface_hub import DatasetCard, DatasetCardData, HfApi, hf_hub_url
 from huggingface_hub.utils import build_hf_headers, get_session, hf_raise_for_status
 
-from lmms_eval.utils import (
+import sys
+sys.path.append("..")
+
+
+from utils import (
     eval_logger,
     get_datetime_str,
     get_file_datetime,

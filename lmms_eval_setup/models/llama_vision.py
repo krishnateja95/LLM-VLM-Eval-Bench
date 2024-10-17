@@ -11,10 +11,13 @@ from torchvision.transforms.functional import to_pil_image
 from tqdm import tqdm
 from transformers import AutoConfig, AutoProcessor, MllamaForConditionalGeneration
 
-from lmms_eval import utils
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.model import lmms
-from lmms_eval.api.registry import register_model
+import sys
+sys.path.append("..")
+
+import utils
+from api.instance import Instance
+from api.model import lmms
+from api.registry import register_model
 
 warnings.filterwarnings("ignore")
 
@@ -69,7 +72,12 @@ class LlamaVision(lmms):
             dtype = getattr(torch, dtype)
 
         self.max_frames_num = max_frames_num
+        
+        print("pretrained, self.device_map, attn_implementation", pretrained, self.device_map, attn_implementation)
+        exit()
+
         self._model = MllamaForConditionalGeneration.from_pretrained(pretrained, revision=revision, torch_dtype=dtype, device_map=self.device_map, trust_remote_code=trust_remote_code, attn_implementation=attn_implementation)
+        
         self.model.eval()
         self.processor = AutoProcessor.from_pretrained(pretrained)
         if accelerator.num_processes > 1 and device_map == "":

@@ -2,7 +2,7 @@ import re
 import sys
 import unicodedata
 
-from lmms_eval.api.filter import Filter
+from api.filter import Filter
 
 
 class WhitespaceFilter(Filter):

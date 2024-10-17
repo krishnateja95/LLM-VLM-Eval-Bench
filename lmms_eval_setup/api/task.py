@@ -36,10 +36,15 @@ from PIL import ImageFile
 from tenacity import retry, stop_after_attempt, stop_after_delay, wait_fixed
 from tqdm import tqdm
 
-from lmms_eval import utils
-from lmms_eval.api import samplers
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.registry import (
+
+import sys
+sys.path.append("..")
+
+
+
+from api import samplers
+from api.instance import Instance
+from api.registry import (
     AGGREGATION_REGISTRY,
     DEFAULT_METRIC_REGISTRY,
     METRIC_REGISTRY,
@@ -49,8 +54,11 @@ from lmms_eval.api.registry import (
     get_metric_aggregation,
     is_higher_better,
 )
-from lmms_eval.caching.cache import load_from_cache, save_to_cache
-from lmms_eval.filters import build_filter_ensemble
+
+from caching.cache import load_from_cache, save_to_cache
+from filters import build_filter_ensemble
+
+import utils
 
 # HuggingfaceM4/NoCaps contains truncated image in test split
 # Include this inside code block to avoid error

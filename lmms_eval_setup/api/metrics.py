@@ -10,7 +10,9 @@ from typing import List
 import numpy as np
 import sacrebleu
 
-from .registry import register_aggregation, register_metric
+import sys
+sys.path.append("..")
+from api.registry import register_aggregation, register_metric
 
 eval_logger = logging.getLogger("lm-eval")
 

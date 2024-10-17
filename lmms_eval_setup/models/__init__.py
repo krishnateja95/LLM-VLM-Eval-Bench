@@ -5,6 +5,9 @@ import sys
 import hf_transfer
 from loguru import logger
 
+import sys
+sys.path.append("..")
+
 os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
 
 logger.remove()
@@ -58,7 +61,7 @@ def get_model(model_name):
 
     model_class = AVAILABLE_MODELS[model_name]
     if "." not in model_class:
-        model_class = f"lmms_eval.models.{model_name}.{model_class}"
+        model_class = f"models.{model_name}.{model_class}"
 
     try:
         model_module, model_class = model_class.rsplit(".", 1)

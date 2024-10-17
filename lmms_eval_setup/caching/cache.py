@@ -3,8 +3,11 @@ import os
 
 import dill
 
-from lmms_eval.loggers.utils import _handle_non_serializable
-from lmms_eval.utils import eval_logger
+import sys
+sys.path.append("..")
+
+from loggers.utils import _handle_non_serializable
+from utils import eval_logger
 
 MODULE_DIR = os.path.dirname(os.path.realpath(__file__))
 

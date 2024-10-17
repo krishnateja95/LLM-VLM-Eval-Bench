@@ -2,8 +2,10 @@ from dataclasses import dataclass
 from typing import List
 
 from datasets import Dataset
+import sys
+sys.path.append("..")
 
-from instance import Instance
+from api.instance import Instance
 
 
 class Filter:

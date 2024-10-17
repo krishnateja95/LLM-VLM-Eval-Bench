@@ -8,7 +8,10 @@ import pandas as pd
 from loguru import logger
 from packaging.version import Version
 
-from lmms_eval.loggers.utils import _handle_non_serializable, remove_none_pattern
+import sys
+sys.path.append("..")
+
+from loggers.utils import _handle_non_serializable, remove_none_pattern
 
 
 def get_wandb_printer() -> Literal["Printer"]:

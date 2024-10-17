@@ -1,4 +1,8 @@
-from lmms_eval.api.filter import Filter, FilterEnsemble
+
+import sys
+sys.path.append("..")
+
+from api.filter import Filter, FilterEnsemble
 
 from . import extraction, selection, transformation
 
