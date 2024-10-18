@@ -19,8 +19,12 @@ from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 from playwright.async_api import async_playwright
 from requests.exceptions import RequestException
 
-from lmms_eval.tasks.mmsearch.constants import *
-from lmms_eval.tasks.mmsearch.utils.web_content_utils import *
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from tasks.mmsearch.constants import *
+from tasks.mmsearch.utils.web_content_utils import *
 
 accelerator = Accelerator()
 WORLD_SIZE = accelerator.num_processes

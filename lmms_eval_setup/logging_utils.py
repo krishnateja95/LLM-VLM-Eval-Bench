@@ -13,7 +13,7 @@ import tenacity
 from loguru import logger
 from packaging.version import Version
 
-from lmms_eval import utils
+from utils import simple_parse_args_string
 
 try:
     import wandb
@@ -69,7 +69,7 @@ def get_wandb_printer() -> Literal["Printer"]:
 # class WandbLogger:
 class WandbLogger:
     def __init__(self, args):
-        self.wandb_args = utils.simple_parse_args_string(args.wandb_args)
+        self.wandb_args = simple_parse_args_string(args.wandb_args)
         self.args = args
         self.all_args_dict = vars(args)
         self.printer = get_wandb_printer()

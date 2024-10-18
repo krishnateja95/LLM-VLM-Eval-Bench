@@ -1,7 +1,10 @@
 import os
 import re
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.tasks.mmsearch.utils.image_utils import (
+from tasks.mmsearch.utils.image_utils import (
     crop_and_split,
     slim_image_and_save,
 )
