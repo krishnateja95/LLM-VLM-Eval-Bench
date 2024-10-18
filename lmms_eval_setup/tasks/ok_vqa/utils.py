@@ -7,9 +7,12 @@ import statistics
 
 import yaml
 from loguru import logger as eval_logger
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
-from lmms_eval.tasks._task_utils.vqa_eval_metric import EvalAIAnswerProcessor
+from tasks._task_utils.file_utils import generate_submission_file
+from tasks._task_utils.vqa_eval_metric import EvalAIAnswerProcessor
 
 
 def ok_vqa_doc_to_visual(doc):

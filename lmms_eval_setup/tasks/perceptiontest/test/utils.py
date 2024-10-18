@@ -7,8 +7,11 @@ from pathlib import Path
 import numpy as np
 import yaml
 from decord import VideoReader, cpu
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-import lmms_eval.tasks._task_utils.file_utils as file_utils
+import tasks._task_utils.file_utils as file_utils
 
 with open(Path(__file__).parent / "_default_template_yaml", "r") as f:
     raw_data = f.readlines()

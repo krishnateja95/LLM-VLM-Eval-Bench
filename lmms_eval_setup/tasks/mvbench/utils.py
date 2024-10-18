@@ -12,8 +12,11 @@ import numpy as np
 import PIL
 import yaml
 from loguru import logger as eval_logger
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
+from tasks._task_utils.file_utils import generate_submission_file
 
 DATA_LIST = {
     "object_interaction": "star/Charades_segment",

@@ -10,10 +10,14 @@ from PIL import Image
 from tqdm import tqdm
 from transformers import PreTrainedTokenizer
 
-from lmms_eval import utils
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.model import lmms
-from lmms_eval.api.registry import register_model
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from utils import  Collator
+from api.instance import Instance
+from api.model import lmms
+from api.registry import register_model
 
 warnings.simplefilter("ignore", category=DeprecationWarning)
 warnings.filterwarnings("ignore")
@@ -236,7 +240,7 @@ class Cambrian(lmms):
             return -len(toks), x[0]
 
         pbar = tqdm(total=len(requests), disable=(self.rank != 0), desc="Model Responding")
-        re_ords = utils.Collator([reg.args for reg in requests], _collate, grouping=True)
+        re_ords = Collator([reg.args for reg in requests], _collate, grouping=True)
         chunks = re_ords.get_batched(n=self.batch_size, batch_fn=None)
 
         for chunk in chunks:

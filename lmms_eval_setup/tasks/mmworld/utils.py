@@ -12,8 +12,11 @@ import cv2
 import numpy as np
 import yaml
 from loguru import logger as eval_logger
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
+from tasks._task_utils.file_utils import generate_submission_file
 
 DISCIPLINES = ["Tech & Engineering", "Science", "Health & Medicine", "Sports & Arts", "Game", "Business", "Embodied Tasks"]
 

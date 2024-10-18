@@ -6,8 +6,11 @@ import numpy as np
 import pandas as pd
 import yaml
 from loguru import logger as eval_logger
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.tasks._task_utils.video_loader import get_cache_dir, get_video
+from tasks._task_utils.video_loader import get_cache_dir, get_video
 
 OPTIONS = ["A", "B", "C", "D", "E"]
 

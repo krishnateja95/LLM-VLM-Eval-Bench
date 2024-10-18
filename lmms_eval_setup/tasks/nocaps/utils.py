@@ -5,8 +5,11 @@ from loguru import logger as eval_logger
 from pycocoevalcap.eval import Bleu, Cider, COCOEvalCap, Meteor, Rouge, Spice
 from pycocoevalcap.tokenizer.ptbtokenizer import PTBTokenizer
 from pycocotools.coco import COCO
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
+from tasks._task_utils.file_utils import generate_submission_file
 
 dir_name = os.path.dirname(os.path.abspath(__file__))
 

@@ -1,7 +1,10 @@
 import re
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.filters.extraction import ExtendedRegexFilter
-from lmms_eval.filters.transformation import MapFilter
+from filters.extraction import ExtendedRegexFilter
+from filters.transformation import MapFilter
 
 REPLACE_PROMPT = "Please answer directly with only the letter of the correct option and nothing else."
 

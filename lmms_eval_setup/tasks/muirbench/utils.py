@@ -1,9 +1,12 @@
 import re
 
 import pandas as pd
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.filters.extraction import ExtendedRegexFilter
-from lmms_eval.filters.transformation import MapFilter
+from filters.extraction import ExtendedRegexFilter
+from filters.transformation import MapFilter
 
 
 def muir_doc_to_text(doc, lmms_eval_specific_kwargs=None):
