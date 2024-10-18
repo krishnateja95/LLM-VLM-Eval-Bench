@@ -75,7 +75,7 @@ class LlamaVision(lmms):
         
         cache_dir = '/lus/grand/projects/datascience/krishnat/model_weights/LLaMA/llama_cache/'
 
-        self._model = MllamaForConditionalGeneration.from_pretrained(pretrained, cache_dir=cache_dir, revision=revision, torch_dtype=dtype, device_map="auto", trust_remote_code=trust_remote_code, attn_implementation=attn_implementation)
+        self._model = MllamaForConditionalGeneration.from_pretrained(pretrained, cache_dir=cache_dir, revision=revision, torch_dtype=dtype, device_map=self.device_map, trust_remote_code=trust_remote_code, attn_implementation=attn_implementation)
         
         self.model.eval()
         self.processor = AutoProcessor.from_pretrained(pretrained, cache_dir=cache_dir)
