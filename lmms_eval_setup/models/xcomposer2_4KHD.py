@@ -12,11 +12,15 @@ from PIL import Image
 from tqdm import tqdm
 from transformers import AutoModel, AutoTokenizer
 
-from lmms_eval import utils
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.model import lmms
-from lmms_eval.api.registry import register_model
-from lmms_eval.utils import stop_sequences_criteria
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+# from lmms_eval import utils
+from api.instance import Instance
+from api.model import lmms
+from api.registry import register_model
+from utils import stop_sequences_criteria
 
 pattern = re.compile(r"[A-Z]")
 

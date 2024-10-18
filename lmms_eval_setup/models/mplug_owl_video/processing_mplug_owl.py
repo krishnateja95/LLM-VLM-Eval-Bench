@@ -9,7 +9,11 @@ from transformers.models.clip.image_processing_clip import CLIPImageProcessor
 from transformers.processing_utils import ProcessorMixin
 from transformers.tokenization_utils_base import BatchEncoding
 
-from lmms_eval.models.model_utils.load_video import read_video_pyav
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from models.model_utils.load_video import read_video_pyav
 
 from .tokenization_mplug_owl import MplugOwlTokenizer
 

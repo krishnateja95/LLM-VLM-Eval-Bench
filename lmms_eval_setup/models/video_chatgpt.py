@@ -9,19 +9,22 @@ from huggingface_hub import snapshot_download
 from loguru import logger
 from PIL import Image
 from tqdm import tqdm
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.model import lmms
-from lmms_eval.api.registry import register_model
+from api.instance import Instance
+from api.model import lmms
+from api.registry import register_model
 
 eval_logger = logger
 
 try:
-    from lmms_eval.models.video_chatgpt.eval.model_utils import (
+    from models.video_chatgpt.eval.model_utils import (
         initialize_model,
         load_video,
     )
-    from lmms_eval.models.video_chatgpt.inference import (
+    from models.video_chatgpt.inference import (
         get_spatio_temporal_features_torch,
         video_chatgpt_infer,
         video_chatgpt_infer_ppl,
@@ -29,7 +32,7 @@ try:
 except ImportError:
     eval_logger.warning("Failed to import video_chatgpt modules")
 
-from lmms_eval.models.model_utils.load_video import read_video_pyav
+from models.model_utils.load_video import read_video_pyav
 
 
 @register_model("video_chatgpt")

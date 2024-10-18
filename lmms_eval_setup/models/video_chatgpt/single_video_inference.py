@@ -17,10 +17,13 @@ from decord import VideoReader, cpu
 
 # add new packages as below
 from PIL import Image
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.models.video_chatgpt.eval.model_utils import initialize_model, load_video
-from lmms_eval.models.video_chatgpt.model.utils import KeywordsStoppingCriteria
-from lmms_eval.models.video_chatgpt.video_conversation import (
+from models.video_chatgpt.eval.model_utils import initialize_model, load_video
+from models.video_chatgpt.model.utils import KeywordsStoppingCriteria
+from models.video_chatgpt.video_conversation import (
     SeparatorStyle,
     conv_templates,
 )

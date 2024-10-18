@@ -13,10 +13,14 @@ from PIL import Image
 from tqdm import tqdm
 from transformers import AutoConfig
 
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.model import lmms
-from lmms_eval.api.registry import register_model
-from lmms_eval.models.model_utils.load_video import read_video_pyav
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from api.instance import Instance
+from api.model import lmms
+from api.registry import register_model
+from models.model_utils.load_video import read_video_pyav
 
 eval_logger = logging.getLogger("lmms-eval")
 import os

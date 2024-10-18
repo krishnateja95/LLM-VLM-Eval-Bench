@@ -1,7 +1,10 @@
 import torch
 from transformers import StoppingCriteria
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.models.video_chatgpt.model import *
+from models.video_chatgpt.model import *
 
 
 class KeywordsStoppingCriteria(StoppingCriteria):

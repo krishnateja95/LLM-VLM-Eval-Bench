@@ -21,9 +21,13 @@ from sglang.test.test_utils import (
 )
 from tqdm import tqdm
 
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.model import lmms
-from lmms_eval.api.registry import register_model
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from api.instance import Instance
+from api.model import lmms
+from api.registry import register_model
 
 NUM_SECONDS_TO_SLEEP = 5
 

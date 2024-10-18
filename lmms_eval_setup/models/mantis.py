@@ -14,11 +14,15 @@ from loguru import logger as eval_logger
 from packaging import version
 from tqdm import tqdm
 
-from lmms_eval import utils
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.model import lmms
-from lmms_eval.api.registry import register_model
-from lmms_eval.utils import stop_sequences_criteria
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from utils import Collator
+from lapi.instance import Instance
+from lapi.model import lmms
+from lapi.registry import register_model
+from lutils import stop_sequences_criteria
 
 warnings.filterwarnings("ignore")
 
@@ -237,7 +241,7 @@ class Mantis(lmms):
         # we group requests by their generation_kwargs,
         # so that we don't try to execute e.g. greedy sampling and temp=0.8 sampling
         # in the same batch.
-        re_ords = utils.Collator([reg.args for reg in requests], _collate, grouping=True)
+        re_ords = Collator([reg.args for reg in requests], _collate, grouping=True)
         chunks = re_ords.get_batched(n=self.batch_size, batch_fn=None)
         num_iters = len(requests) // self.batch_size if len(requests) % self.batch_size == 0 else len(requests) // self.batch_size + 1
         pbar = tqdm(total=num_iters, disable=(self.rank != 0), desc="Model Responding")

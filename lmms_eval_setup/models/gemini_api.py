@@ -9,9 +9,14 @@ from loguru import logger as eval_logger
 from PIL import Image
 from tqdm import tqdm
 
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.model import lmms
-from lmms_eval.api.registry import register_model
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+
+from api.instance import Instance
+from api.model import lmms
+from api.registry import register_model
 
 try:
     import google.generativeai as genai

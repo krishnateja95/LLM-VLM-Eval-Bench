@@ -18,10 +18,15 @@ from transformers import (
     FuyuProcessor,
 )
 
-from lmms_eval import utils
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.model import lmms
-from lmms_eval.api.registry import register_model
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+
+from utils import Collator 
+from api.instance import Instance
+from api.model import lmms
+from api.registry import register_model
 
 
 @register_model("fuyu")
@@ -165,7 +170,7 @@ class Fuyu(lmms):
             toks = self.tok_encode(x[0])
             return -len(toks), x[0]
 
-        re_ords = utils.Collator([reg.args for reg in requests], _collate, grouping=True)
+        re_ords = Collator([reg.args for reg in requests], _collate, grouping=True)
         chunks = re_ords.get_batched(n=self.batch_size, batch_fn=None)
         num_iters = len(requests) // self.batch_size if len(requests) % self.batch_size == 0 else len(requests) // self.batch_size + 1
         pbar = tqdm(total=num_iters, disable=(self.rank != 0), desc="Model Responding")

@@ -6,9 +6,14 @@ from decord import VideoReader, cpu
 from PIL import Image
 from transformers import AutoTokenizer, CLIPImageProcessor, CLIPVisionModel
 
-from lmms_eval.models.video_chatgpt.constants import *
-from lmms_eval.models.video_chatgpt.model import VideoChatGPTLlamaForCausalLM
-from lmms_eval.models.video_chatgpt.utils import disable_torch_init
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+
+from models.video_chatgpt.constants import *
+from models.video_chatgpt.model import VideoChatGPTLlamaForCausalLM
+from models.video_chatgpt.utils import disable_torch_init
 
 
 def load_video(vis_path, n_clips=1, num_frm=100):

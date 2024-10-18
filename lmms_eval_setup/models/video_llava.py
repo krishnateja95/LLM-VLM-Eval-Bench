@@ -10,17 +10,21 @@ from loguru import logger
 from tqdm import tqdm
 from transformers import AutoConfig
 
-from lmms_eval import utils
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.model import lmms
-from lmms_eval.api.registry import register_model
-from lmms_eval.utils import stop_sequences_criteria
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+
+from api.instance import Instance
+from api.model import lmms
+from api.registry import register_model
+from utils import stop_sequences_criteria
 
 eval_logger = logger
 
 from transformers import VideoLlavaForConditionalGeneration, VideoLlavaProcessor
 
-from lmms_eval.models.model_utils.load_video import read_video_pyav
+from models.model_utils.load_video import read_video_pyav
 
 
 @register_model("video_llava")

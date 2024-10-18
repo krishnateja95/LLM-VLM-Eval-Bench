@@ -6,10 +6,14 @@ from loguru import logger as eval_logger
 from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoProcessor
 
-from lmms_eval import utils
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.model import lmms
-from lmms_eval.api.registry import register_model
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from utils import Collator 
+from api.instance import Instance
+from api.model import lmms
+from api.registry import register_model
 
 
 @register_model("phi3v")
@@ -144,7 +148,7 @@ class Phi3v(lmms):
         # we group requests by their generation_kwargs,
         # so that we don't try to execute e.g. greedy sampling and temp=0.8 sampling
         # in the same batch.
-        re_ords = utils.Collator([reg.args for reg in requests], _collate, grouping=True)
+        re_ords = Collator([reg.args for reg in requests], _collate, grouping=True)
         chunks = re_ords.get_batched(n=self.batch_size, batch_fn=None)
         for chunk in chunks:
             contexts, all_gen_kwargs, doc_to_visual, doc_id, task, split = zip(*chunk)

@@ -15,9 +15,13 @@ from PIL import Image
 from tqdm import tqdm
 from transformers import AutoModel, AutoTokenizer
 
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.model import lmms
-from lmms_eval.api.registry import register_model
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from api.instance import Instance
+from api.model import lmms
+from api.registry import register_model
 
 eval_logger = logging.getLogger("eval_logger")
 

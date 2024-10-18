@@ -1,8 +1,11 @@
 import dataclasses
 from enum import Enum, auto
 from typing import List
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.models.video_chatgpt.eval.model_utils import load_video
+from models.video_chatgpt.eval.model_utils import load_video
 
 
 class SeparatorStyle(Enum):

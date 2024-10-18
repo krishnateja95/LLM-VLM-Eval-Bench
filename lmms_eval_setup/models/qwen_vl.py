@@ -7,11 +7,15 @@ import torch
 from accelerate import Accelerator, DistributedType
 from tqdm import tqdm
 
-from lmms_eval import utils
-from lmms_eval.api.instance import Instance
-from lmms_eval.api.model import lmms
-from lmms_eval.api.registry import register_model
-from lmms_eval.models.model_utils.qwen.qwen_generate_utils import make_context
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from utils import Collator 
+from api.instance import Instance
+from api.model import lmms
+from api.registry import register_model
+from models.model_utils.qwen.qwen_generate_utils import make_context
 
 warnings.simplefilter("ignore", category=DeprecationWarning)
 warnings.filterwarnings("ignore")
@@ -198,7 +202,7 @@ class Qwen_VL(lmms):
         # we group requests by their generation_kwargs,
         # so that we don't try to execute e.g. greedy sampling and temp=0.8 sampling
         # in the same batch.
-        re_ords = utils.Collator([reg.args for reg in requests], _collate, grouping=True)
+        re_ords = Collator([reg.args for reg in requests], _collate, grouping=True)
         chunks = re_ords.get_batched(n=self.batch_size, batch_fn=None)
         for chunk in chunks:
             contexts, all_gen_kwargs, doc_to_visual, doc_id, task, split = zip(*chunk)

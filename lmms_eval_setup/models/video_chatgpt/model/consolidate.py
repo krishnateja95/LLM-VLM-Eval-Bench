@@ -7,8 +7,11 @@ import argparse
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.models.video_chatgpt.model import *
+from models.video_chatgpt.model import *
 
 
 def consolidate_ckpt(src_path, dst_path):
