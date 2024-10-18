@@ -8,18 +8,22 @@ import yaml
 from loguru import logger as eval_logger
 from PIL import Image
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
-from lmms_eval.tasks.mmsearch.constants import *
-from lmms_eval.tasks.mmsearch.prompts.prompt import *
-from lmms_eval.tasks.mmsearch.prompts.prompt_w_imagesearch import *
-from lmms_eval.tasks.mmsearch.retrieve_content.retriever import Content_Retriever
-from lmms_eval.tasks.mmsearch.score.f1_score import get_f1_score
-from lmms_eval.tasks.mmsearch.score.req_score import get_requery_score
-from lmms_eval.tasks.mmsearch.score.result_summary import get_result_summary
-from lmms_eval.tasks.mmsearch.utils.image_utils import pil_image_to_bytes
-from lmms_eval.tasks.mmsearch.utils.lmms_eval_utils import *
-from lmms_eval.tasks.mmsearch.utils.prompt_utils import *
-from lmms_eval.tasks.mmsearch.utils.utils import *
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from tasks._task_utils.file_utils import generate_submission_file
+from tasks.mmsearch.constants import *
+from tasks.mmsearch.prompts.prompt import *
+from tasks.mmsearch.prompts.prompt_w_imagesearch import *
+from tasks.mmsearch.retrieve_content.retriever import Content_Retriever
+from tasks.mmsearch.score.f1_score import get_f1_score
+from tasks.mmsearch.score.req_score import get_requery_score
+from tasks.mmsearch.score.result_summary import get_result_summary
+from tasks.mmsearch.utils.image_utils import pil_image_to_bytes
+from tasks.mmsearch.utils.lmms_eval_utils import *
+from tasks.mmsearch.utils.prompt_utils import *
+from tasks.mmsearch.utils.utils import *
 
 with open(Path(__file__).parent / "mmsearch.yaml", "r") as f:
     raw_data = f.readlines()

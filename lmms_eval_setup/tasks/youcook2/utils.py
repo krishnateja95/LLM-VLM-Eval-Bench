@@ -9,8 +9,12 @@ from pycocoevalcap.eval import Bleu, Cider, COCOEvalCap, Meteor, Rouge, Spice
 from pycocoevalcap.tokenizer.ptbtokenizer import PTBTokenizer
 from pycocotools.coco import COCO
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
-from lmms_eval.tasks._task_utils.video_loader import get_cache_dir
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from tasks._task_utils.file_utils import generate_submission_file
+from tasks._task_utils.video_loader import get_cache_dir
 
 COCO_METRICS = ["Bleu_4", "Bleu_3", "Bleu_2", "Bleu_1", "METEOR", "ROUGE_L", "CIDEr"]  # , "SPICE"]
 

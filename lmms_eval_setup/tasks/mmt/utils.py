@@ -4,8 +4,11 @@ from collections import defaultdict
 
 import numpy as np
 from loguru import logger as eval_logger
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
+from tasks._task_utils.file_utils import generate_submission_file
 
 # All abbreviations for the categories
 """

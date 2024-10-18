@@ -1,9 +1,12 @@
 import json
 
 from loguru import logger
+import sys
+sys.path.append("..")
+sys.path.append("../..")
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
-from lmms_eval.tasks.synthdog.donut_evaluator import JSONParseEvaluator
+from tasks._task_utils.file_utils import generate_submission_file
+from tasks.synthdog.donut_evaluator import JSONParseEvaluator
 
 evaluator = JSONParseEvaluator()
 

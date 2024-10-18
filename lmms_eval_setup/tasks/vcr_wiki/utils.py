@@ -13,7 +13,11 @@ from loguru import logger as eval_logger
 from nltk.util import ngrams
 from spacy.cli import download
 
-from lmms_eval.tasks._task_utils.file_utils import generate_submission_file
+import sys
+sys.path.append("..")
+sys.path.append("../..")
+
+from tasks._task_utils.file_utils import generate_submission_file
 
 with open(Path(__file__).parent / "_default_template_vcr_yaml", "r") as f:
     raw_data = f.readlines()
