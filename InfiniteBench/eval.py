@@ -18,7 +18,6 @@ from eval_utils import (
 from argparse import ArgumentParser, Namespace
 from eval_utils import DATA_NAME_TO_MAX_NEW_TOKENS
 
-
 MAX_POSITION_ID = 200000
 TRUNCATE_LEN = 200000
 

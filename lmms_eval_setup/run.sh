@@ -8,6 +8,8 @@ export HF_DATASETS_CACHE='/lus/grand/projects/datascience/krishnat/model_weights
 
 python3 -m accelerate.commands.launch --num_processes=16 main.py \
     --model llama_vision \
-    --model_args pretrained="meta-llama/Llama-3.2-11B-Vision-Instruct" \
-    --tasks refcoco \
+    --model_args pretrained="meta-llama/Llama-3.2-11B-Vision-Instruct",cache_dir='/lus/grand/projects/datascience/krishnat/model_weights/LLaMA/llama_cache/',backend="HF" \
+    --tasks mmmu \
     --batch_size 1 \
+    # --cache_dir '/lus/grand/projects/datascience/krishnat/model_weights/LLaMA/llama_cache/' \
+    # --backend "HF"

@@ -16,7 +16,6 @@ dir_name = os.path.dirname(os.path.abspath(__file__))
 
 TEXTCAPS_METRICS = ["Bleu_4", "Bleu_3", "Bleu_2", "Bleu_1", "METEOR", "ROUGE_L", "CIDEr"]  # , "SPICE"]
 
-
 def textcaps_doc_to_visual(doc):
     return [doc["image"].convert("RGB")]
 

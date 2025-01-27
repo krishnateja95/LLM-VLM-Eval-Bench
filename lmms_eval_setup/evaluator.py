@@ -137,6 +137,8 @@ def simple_evaluate(
     :return
         Dictionary of results
     """
+
+    
     seed_message = []
     if random_seed is not None:
         # See https://github.com/EleutherAI/lm-evaluation-harness/pull/1412

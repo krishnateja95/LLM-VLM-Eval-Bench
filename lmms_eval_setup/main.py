@@ -32,6 +32,7 @@ from utils import (
     simple_parse_args_string,
 )
 
+# os.environ['TORCH_USE_CUDA_DSA'] = '1'
 
 def _int_or_none_list_arg_type(min_len: int, max_len: int, defaults: str, value: str, split_char: str = ","):
     def parse_value(item):
@@ -84,6 +85,8 @@ def parse_eval_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument("--config", default="", help="Path to a yaml file specifying all eval arguments, will ignore cli arguments if specified")
     parser.add_argument("--model", default="hf", help="Name of model e.g. `hf`")
+    # parser.add_argument("--cache_dir", default="", help="Cache directory to store model weights")
+    # parser.add_argument("--backend", default="HF", help="Backend (HF or vLLM or TRT-LLM)")
     parser.add_argument(
         "--tasks",
         default=None,
